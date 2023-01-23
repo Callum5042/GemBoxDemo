@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="GemBox.Document" Version="35.0.1238" />
+  </ItemGroup>
+
 </Project>
