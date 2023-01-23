@@ -20,6 +20,8 @@ namespace GemBoxDemo.Models
         [DataType(DataType.DateTime)]
         public DateTime? DocDateTime { get; set; } = DateTime.Now;
 
+
+
         [Display(Name = "Doc Type")]
         public MailMergeDocType MailMergeDocType { get; set; } = MailMergeDocType.PDF;
     }
