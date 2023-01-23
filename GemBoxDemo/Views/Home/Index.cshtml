@@ -1,9 +1,32 @@
-﻿
+﻿@model MailMergeModel
+
 <h1>
     GemBox Demo
 </h1>
 
-<a asp-controller="home" asp-action="download" class="btn btn-primary">
+<form asp-controller="MailMerge" asp-action="Download">
+    <div class="row">
+
+        <div class=" col-md-6 form-group">
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" class="form-control" />
+        </div>
+
+        <div class=" col-md-6 form-group">
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" class="form-control" />
+        </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Download PDF
+    </button>
+
+</form>
+
+
+@*<a asp-controller="home" asp-action="download" class="btn btn-primary">
     Download DOCX
 </a>
 
@@ -13,4 +36,4 @@
 
 <a asp-controller="home" asp-action="DownloadMailMerge" class="btn btn-primary">
     Download MailMerge
-</a>
+</a>*@

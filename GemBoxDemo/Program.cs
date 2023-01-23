@@ -28,7 +28,7 @@ namespace GemBoxDemo
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=MailMerge}/{action=Index}/{id?}");
 
             app.Run();
         }

@@ -73,9 +73,9 @@ namespace GemBoxDemo.Controllers
 
             // Save
             using var stream = new MemoryStream();
-            doc.Save(stream, SaveOptions.DocxDefault);
+            doc.Save(stream, SaveOptions.PdfDefault);
 
-            return File(stream.ToArray(), SaveOptions.DocxDefault.ContentType, "GemBoxDemo.docx");
+            return File(stream.ToArray(), SaveOptions.PdfDefault.ContentType, "GemBoxDemo.pdf");
         }
     }
 }
