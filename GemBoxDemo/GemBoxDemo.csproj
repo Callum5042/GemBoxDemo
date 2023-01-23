@@ -10,4 +10,10 @@
     <PackageReference Include="GemBox.Document" Version="35.0.1238" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="GemBoxDemoTemplate.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

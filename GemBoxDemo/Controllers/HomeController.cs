@@ -63,18 +63,10 @@ namespace GemBoxDemo.Controllers
 
         public IActionResult DownloadMailMerge()
         {
-            //var doc = new DocumentModel();
-
-            //// Add document content.
-            //doc.Sections.Add(new Section(doc, new Paragraph(doc, new Field(doc, FieldType.MergeField, "FullName"))));
-
-            //// Save the document to a file.
-            //doc.Save("TemplateDocument.docx");
-
-            var doc = DocumentModel.Load(@"D:\Sources\Testing\GemBoxDemo\GemBoxDemo\template.docx");
+            var doc = DocumentModel.Load(@"GemBoxDemoTemplate.docx");
 
             // Initialize mail merge data source.
-            var dataSource = new { FullName = "John Doe" };
+            var dataSource = new { Name = "John Doe" };
 
             // Execute mail merge.
             doc.MailMerge.Execute(dataSource);
