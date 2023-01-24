@@ -18,7 +18,20 @@ namespace GemBoxDemo.Controllers
             ComponentInfo.SetLicense("FREE-LIMITED-KEY");
 
             // Load template
-            var doc = DocumentModel.Load(@"GemBoxDemoTemplate.docx");
+            DocumentModel doc;
+            if (model.TemplateFile is null)
+            {
+                doc = DocumentModel.Load(@"GemBoxDemoTemplate.docx");
+            }
+            else
+            {
+                doc = DocumentModel.Load(model.TemplateFile.OpenReadStream());
+            }
+
+            // Copy image
+            using var imageStream = new MemoryStream();
+            model.ImageFile?.CopyTo(imageStream);
+            model.ImageBytes = imageStream.ToArray();
 
             // Execute mail merge.
             doc.MailMerge.Execute(model);

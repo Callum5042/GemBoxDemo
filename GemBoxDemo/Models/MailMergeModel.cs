@@ -20,7 +20,13 @@ namespace GemBoxDemo.Models
         [DataType(DataType.DateTime)]
         public DateTime? DocDateTime { get; set; } = DateTime.Now;
 
+        [Display(Name = "Upload Template")]
+        public IFormFile? TemplateFile { get; set; }
 
+        [Display(Name = "Upload Image")]
+        public IFormFile? ImageFile { get; set; }
+
+        public byte[]? ImageBytes { get; set; }
 
         [Display(Name = "Doc Type")]
         public MailMergeDocType MailMergeDocType { get; set; } = MailMergeDocType.PDF;

@@ -4,7 +4,7 @@
     GemBox Demo
 </h1>
 
-<form asp-controller="MailMerge" asp-action="Download">
+<form asp-controller="MailMerge" asp-action="Download" enctype="multipart/form-data">
 
     <div class="row">
         <div class=" col-md-4 form-group">
@@ -19,14 +19,19 @@
 
         <div class=" col-md-4 form-group">
             <label asp-for="DocDateTime"></label>
-            <input asp-for="DocDateTime" class="form-control" />
+            <input asp-for="DocDateTime" class="form-control" required step="60" />
         </div>
     </div>
 
     <div class="row mt-3">
         <div class="col-md-4 form-group">
-            <label for="template">Upload Template</label>
-            <input class="form-control" type="file" id="template">
+            <label asp-for="ImageFile"></label>
+            <input class="form-control" asp-for="ImageFile">
+        </div>
+
+        <div class="col-md-4 form-group">
+            <label asp-for="TemplateFile"></label>
+            <input class="form-control" asp-for="TemplateFile">
         </div>
 
         <div class="col-md-4 form-group">
