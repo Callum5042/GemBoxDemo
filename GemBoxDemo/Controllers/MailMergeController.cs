@@ -38,7 +38,7 @@ namespace GemBoxDemo.Controllers
 
             // Document type
             var saveOptions = GetSaveOptions(model.MailMergeDocType);
-            var filename = $"GemBoxDemo.{GetFileExtension(model.MailMergeDocType)}";
+            var filename = $"GemBoxMailMergeDemo.{GetFileExtension(model.MailMergeDocType)}";
 
             // Save
             using var stream = new MemoryStream();

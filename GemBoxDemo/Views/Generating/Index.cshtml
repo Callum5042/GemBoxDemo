@@ -1,2 +1,20 @@
 ﻿@model GeneratingModel
 
+<h1>
+    MailMerge Demo
+</h1>
+
+<form asp-controller="Generating" asp-action="Download">
+
+    <div class="row">
+        <div class=" col-md-12 form-group">
+            <label asp-for="Paragraph"></label>
+            <textarea asp-for="Paragraph" class="form-control" rows="6"></textarea>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">
+        Download
+    </button>
+
+</form>
