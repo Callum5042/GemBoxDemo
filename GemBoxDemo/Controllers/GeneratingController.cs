@@ -1,5 +1,4 @@
 ﻿using GemBox.Document;
-using GemBox.Document.Tables;
 using GemBoxDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -30,7 +29,7 @@ namespace GemBoxDemo.Controllers
             // Title
             var titleStyle = (ParagraphStyle)Style.CreateStyle(StyleTemplateType.Title, document);
             document.Styles.Add(titleStyle);
-            section.Blocks.Add(new Paragraph(document, "Generating Document Title") { ParagraphFormat = { Style = titleStyle } });
+            section.Blocks.Add(new Paragraph(document, "Generating Demo") { ParagraphFormat = { Style = titleStyle } });
 
             // Paragraph
             var paragraph = new Paragraph(document);
