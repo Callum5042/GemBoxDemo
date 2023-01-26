@@ -12,8 +12,6 @@ namespace GemBoxDemo.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-
-            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
         }
 
         public IActionResult Index()
