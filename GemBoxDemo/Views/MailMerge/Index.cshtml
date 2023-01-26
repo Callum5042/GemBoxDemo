@@ -19,7 +19,7 @@
 
         <div class=" col-md-4 form-group">
             <label asp-for="DocDateTime"></label>
-            <input asp-for="DocDateTime" class="form-control" required step="60" />
+            <input asp-for="DocDateTime" asp-format="{0:yyyy-MM-ddTHH:mm}" class="form-control" />
         </div>
     </div>
 

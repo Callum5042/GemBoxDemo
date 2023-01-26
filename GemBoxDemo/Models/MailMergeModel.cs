@@ -16,6 +16,8 @@ namespace GemBoxDemo.Models
         [Display(Name = "Last Name")]
         public string? LastName { get; set; }
 
+        public string FullName => $"{FirstName} {LastName}";
+
         [Display(Name = "Date Time")]
         [DataType(DataType.DateTime)]
         public DateTime? DocDateTime { get; set; } = DateTime.Now;
