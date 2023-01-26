@@ -1,0 +1,25 @@
+﻿@model EncryptionModel
+
+<h1>
+    Encryption Demo
+</h1>
+
+<form asp-controller="Encryption" asp-action="Download">
+
+    <div class="row">
+        <div class=" col-md-6 form-group">
+            <label asp-for="Content"></label>
+            <input asp-for="Content" class="form-control" />
+        </div>
+
+        <div class=" col-md-6 form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">
+        Download
+    </button>
+
+</form>
