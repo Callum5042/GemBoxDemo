@@ -1,4 +1,5 @@
-﻿using GemBoxDemo.Models;
+﻿using GemBox.Document;
+using GemBoxDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GemBoxDemo.Controllers
@@ -7,11 +8,34 @@ namespace GemBoxDemo.Controllers
     {
         public IActionResult Index()
         {
-            var model = GenerateModel();
+            var model = GetModel();
             return View(model);
         }
 
-        private static RangesModel GenerateModel()
+        public IActionResult Download()
+        {
+            var model = GetModel();
+
+            // Set License
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+            // Load template
+            DocumentModel doc = DocumentModel.Load(@"GemBoxMoviesTemplate.docx");
+
+            // Execute mail merge.
+            doc.MailMerge.Execute(model);
+
+            // Document type
+            var saveOptions = SaveOptions.DocxDefault;
+            var filename = $"GemBoxMailMergeDemo.docx";
+
+            // Save
+            using var stream = new MemoryStream();
+            doc.Save(stream, saveOptions);
+            return File(stream.ToArray(), saveOptions.ContentType, filename);
+        }
+
+        private static RangesModel GetModel()
         {
             return new RangesModel
             {
